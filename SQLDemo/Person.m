@@ -10,4 +10,12 @@
 
 @implementation Person
 
++ (instancetype)personWithName:(NSString *)name Age:(NSInteger)age {
+    Person *person = [[Person alloc] init];
+    person.name = name;
+    person.age = age;
+    
+    return person;
+}
+
 @end

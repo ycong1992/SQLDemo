@@ -15,6 +15,10 @@
 		06C49822255395CC00971D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C49820255395CC00971D60 /* LaunchScreen.storyboard */; };
 		06C49825255395CC00971D60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C49824255395CC00971D60 /* main.m */; };
 		06C4982F255395CC00971D60 /* SQLDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4982E255395CC00971D60 /* SQLDemoUITests.m */; };
+		06C4983B2553980B00971D60 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C4983A2553980B00971D60 /* libsqlite3.dylib */; };
+		06C4983E25539F3E00971D60 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4983D25539F3E00971D60 /* Person.m */; };
+		096483A55E6552AEAFD24771 /* Pods_SQLDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030F1AB9B08892C31296E38C /* Pods_SQLDemo.framework */; };
+		2780D16A0C2ED759F147B4F2 /* Pods_SQLDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030F1AB9B08892C31296E38C /* Pods_SQLDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C4980F255395C700971D60 /* SQLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C49812255395C700971D60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06C49813255395C700971D60 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +48,14 @@
 		06C4982A255395CC00971D60 /* SQLDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SQLDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C4982E255395CC00971D60 /* SQLDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLDemoUITests.m; sourceTree = "<group>"; };
 		06C49830255395CC00971D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06C4983A2553980B00971D60 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		06C4983C25539F3E00971D60 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		06C4983D25539F3E00971D60 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		67A7F88FC7C6C9D5A8AA10BA /* Pods-SQLDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SQLDemoUITests/Pods-SQLDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78BB89970F07982AE1687CFF /* Pods-SQLDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.release.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemoUITests/Pods-SQLDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE89924BCE5594EA74A2BE1A /* Pods-SQLDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C4983B2553980B00971D60 /* libsqlite3.dylib in Frameworks */,
+				096483A55E6552AEAFD24771 /* Pods_SQLDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2780D16A0C2ED759F147B4F2 /* Pods_SQLDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +85,8 @@
 				06C49811255395C700971D60 /* SQLDemo */,
 				06C4982D255395CC00971D60 /* SQLDemoUITests */,
 				06C49810255395C700971D60 /* Products */,
+				06C498392553980B00971D60 /* Frameworks */,
+				8A9F49B8AB5C09C8F6772DEA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +108,8 @@
 				06C49816255395C700971D60 /* SceneDelegate.m */,
 				06C49818255395C700971D60 /* ViewController.h */,
 				06C49819255395C700971D60 /* ViewController.m */,
+				06C4983C25539F3E00971D60 /* Person.h */,
+				06C4983D25539F3E00971D60 /* Person.m */,
 				06C4981B255395C700971D60 /* Main.storyboard */,
 				06C4981E255395CC00971D60 /* Assets.xcassets */,
 				06C49820255395CC00971D60 /* LaunchScreen.storyboard */,
@@ -108,6 +128,28 @@
 			path = SQLDemoUITests;
 			sourceTree = "<group>";
 		};
+		06C498392553980B00971D60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C4983A2553980B00971D60 /* libsqlite3.dylib */,
+				030F1AB9B08892C31296E38C /* Pods_SQLDemo.framework */,
+				F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A9F49B8AB5C09C8F6772DEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE89924BCE5594EA74A2BE1A /* Pods-SQLDemo.debug.xcconfig */,
+				78BB89970F07982AE1687CFF /* Pods-SQLDemo.release.xcconfig */,
+				A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */,
+				67A7F88FC7C6C9D5A8AA10BA /* Pods-SQLDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06C49833255395CC00971D60 /* Build configuration list for PBXNativeTarget "SQLDemo" */;
 			buildPhases = (
+				9467FE7407258670898FDFA5 /* [CP] Check Pods Manifest.lock */,
 				06C4980B255395C700971D60 /* Sources */,
 				06C4980C255395C700971D60 /* Frameworks */,
 				06C4980D255395C700971D60 /* Resources */,
+				6F763DC4A2957230EB78309F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06C49836255395CC00971D60 /* Build configuration list for PBXNativeTarget "SQLDemoUITests" */;
 			buildPhases = (
+				19EBD1A1BF10B5082402458B /* [CP] Check Pods Manifest.lock */,
 				06C49826255395CC00971D60 /* Sources */,
 				06C49827255395CC00971D60 /* Frameworks */,
 				06C49828255395CC00971D60 /* Resources */,
@@ -203,6 +248,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19EBD1A1BF10B5082402458B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SQLDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F763DC4A2957230EB78309F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SQLDemo/Pods-SQLDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SQLDemo/Pods-SQLDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SQLDemo/Pods-SQLDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9467FE7407258670898FDFA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SQLDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06C4980B255395C700971D60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,6 +319,7 @@
 			files = (
 				06C4981A255395C700971D60 /* ViewController.m in Sources */,
 				06C49814255395C700971D60 /* AppDelegate.m in Sources */,
+				06C4983E25539F3E00971D60 /* Person.m in Sources */,
 				06C49825255395CC00971D60 /* main.m in Sources */,
 				06C49817255395C700971D60 /* SceneDelegate.m in Sources */,
 			);
@@ -365,9 +475,11 @@
 		};
 		06C49834255395CC00971D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE89924BCE5594EA74A2BE1A /* Pods-SQLDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQLRD3VW7N;
 				INFOPLIST_FILE = SQLDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,9 +493,11 @@
 		};
 		06C49835255395CC00971D60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78BB89970F07982AE1687CFF /* Pods-SQLDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WQLRD3VW7N;
 				INFOPLIST_FILE = SQLDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +511,7 @@
 		};
 		06C49837255395CC00971D60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQLDemoUITests/Info.plist;
@@ -414,6 +529,7 @@
 		};
 		06C49838255395CC00971D60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67A7F88FC7C6C9D5A8AA10BA /* Pods-SQLDemoUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SQLDemoUITests/Info.plist;
