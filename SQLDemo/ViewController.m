@@ -63,8 +63,14 @@
  事务与非事务，简单的举例来说就是，事务就是把所有的东西打包在一起，一次性处理它。而非事务就是一条一条的来执行并且处理。
 
  更新SQL的函数(创表、更新、插入和删除)：
- sqlite3_exec实际上是将编译，执行进行了封装，等价于sqlite3_prepare_v2()、sqlite3_step()和sqlite3_finalize()，所以对于批量的更新、查询语句sqlite3_prepare方式更高效，因为只需要编译一次，就可以重复执行N次
- sqlite3_prepare_v2()：将sql文本转换成一个准备语句对象，同时返回这个对象的指针(仅仅为执行准备这个sql语句)
+ 1）sqlite3_exec实际上是将编译，执行进行了封装，等价于sqlite3_prepare_v2()、sqlite3_step()和sqlite3_finalize()
+ 2）sqlite3_stmt机制操作：
+ <1>指令准备：sqlite3_prepare_v2会对sql语句(模板)进行解析和编译，生成一个准备语句对象
+ <2>变量绑定：sqlite3_bind_xxx可以将变量绑定到准备语句对象中
+ <3>语句执行：sqlite3_step执行准备语句对象的SQL语句(执行完后可以使用sqlite3_reset重置，回退到<2>重新赋值执行)
+ <4>结果获取：sqlite3_column_xxx根据不同的数据类型使用不同的方法
+ <5>关闭数据库：sqlite3_prepare_v2需要使用sqlite3_finalize进行关闭
+ 3）如果只是单条命令，那么使用sqlite3_exec和sqlite3_stmt效率是一样的，但是在涉及到批量操作时，推荐使用sqlite3_stmt机制(一次编译，多次执行)
  
  一次性插入大批量数据的优化方案：使用sqlite3_exec或sqlite3_step()来执行sql语句，会自动开启一个“事务”，然后自动提交“事务”。当插入多条数据时会很耗费时间，此时应该优化插入语句(准备语句)并手动开启事务和手动提交事务
  
