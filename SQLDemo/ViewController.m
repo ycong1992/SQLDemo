@@ -1,4 +1,5 @@
 /**
+ 数据库查看软件：DB Browser for SQLite https://sqlitebrowser.org/dl/
  数据库(Database)是按照数据结构来组织、存储和管理数据的仓库
  数据库可以分为2大种类：关系型数据库(主流如SQLite)、对象型数据库
  SQLite是一款轻型的嵌入式数据库：1）它占用资源非常的低，在嵌入式设备中，可能只需要几百K的内存就够了；2）它的处理速度比Mysql、PostgreSQL这两款著名的数据库都还快
@@ -32,7 +33,6 @@
  right join(右连接/右外连接)：返回包括右表中的所有记录和左表中连接字段相等的记录(以右表为主，将左表中相同字段的数据匹配过来)
  inner join(内连接/等值连接)：只返回两个表中连接字段相等的行(取交集)
  full join(全连接/全外连接)：返回左右表中所有的记录和左右表中连接字段相等的记录(并集)
- https://sqlitebrowser.org/dl/
  A表
  id  name
  1    小王
@@ -79,8 +79,6 @@
  */
 
 /**
- 数据库查看软件：DB Browser for SQLite
- 
  sqlite3 总体来说使用比较麻烦，平时开发更多的是使用第三方框架FMDB
  FMDB是基于SQLite使用OC语法封装的数据库框架，它的优点如下:
  1）语法更加面向对象
