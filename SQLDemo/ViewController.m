@@ -18,11 +18,8 @@
     [super viewDidLoad];
     
     /** sqlite3操作 */
-//    _sqlite3 = NULL;
-//    // 操作数据库之前必须先指定数据库文件和要操作的表，所以使用`SQLite3`，首先要打开数据库文件，然后指定或创建一张表
 //    [self openDatabase];
-//    // 使用 `sqlite3_exec()` 方法可以执行任何`SQL`语句，比如`创表、更新、插入和删除`操作。但是一般不用它执行查询语句，因为它不会返回查询到的数据
-////    [self insertData];
+//    [self execData];
 //    [self readData];
     
     /** FMDB操作 */
@@ -30,7 +27,9 @@
 //    [self openFMDBMultithreading]; // 多线程FMDatabaseQueue
 }
 
+#pragma mark - sqlite3
 - (void)openDatabase {
+    _sqlite3 = NULL;
     // 设置数据库文件名
     NSString *filename = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"person.db"];
     // 打开数据库文件，如果没有会自动创建一个文件
@@ -48,9 +47,11 @@
     } else {
         NSLog(@"Open DB fail");
     }
+    // 关闭数据库:sqlite3_close(_sqlite3)
 }
 
-- (void)insertData {
+- (void)execData {
+    // 使用 `sqlite3_exec()` 方法可以执行任何`SQL`语句，比如`创表、更新、插入和删除`操作。但是一般不用它执行查询语句，因为它不会返回查询到的数据
     NSString *nameStr;
     NSInteger age;
 

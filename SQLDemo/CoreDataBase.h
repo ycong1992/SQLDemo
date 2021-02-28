@@ -1,5 +1,7 @@
 /**
  https://www.cnblogs.com/mjios/archive/2013/02/26/2932999.html
+ 备注：Core Data是针对SQLite3的封装，本质还是要转换成对应的SQL语句去执行
+
  Core Data是iOS5之后才出现的一个框架，它提供了对象-关系映射(ORM)的功能，即能够将OC对象转化成数据，保存在SQLite数据库文件中，也能够将保存在数据库中的数据还原成OC对象(在此数据操作期间，我们不需要编写任何SQL语句)
  person
  id  name  age
