@@ -28,17 +28,6 @@
     /** FMDB操作 */
 //    [self openFMDB];
 //    [self openFMDBMultithreading]; // 多线程FMDatabaseQueue
-    
-    NSString *file = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"person.data"];
-    Person *person = [[Person alloc] init];
-    person.name = @"yyyyyyy";
-    person.age = 999;
-    [NSKeyedArchiver archiveRootObject:person toFile:file];
-    
-    Person *person2 = [NSKeyedUnarchiver unarchiveObjectWithFile:file];
-    if (person2) {
-        NSLog(@"unarchiveObjectWithFile:%@, %ld", person2.name, (long)person2.age);
-    }
 }
 
 - (void)openDatabase {
@@ -107,6 +96,7 @@
    sqlite3_finalize(stmt);
 }
 
+#pragma mark - FMDB
 - (void)openFMDB {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"person.db"];
     /**
@@ -202,6 +192,7 @@
     return _sqlArray;
 }
 
+#pragma mark - Core Data
 - (void)initContext {
     /** 1）搭建上下文环境 */
     // 从应用程序包中加载模型文件
