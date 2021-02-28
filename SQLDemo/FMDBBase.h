@@ -13,5 +13,4 @@
  备注：在FMDB中，除查询以外的所有操作，都称为更新，如create、drop、insert、update、delete等
  
  在多个线程中同时使用一个FMDatabase实例，会造成数据混乱等问题。为了保证线程安全，FMDB提供方便快捷的FMDatabaseQueue类
-
  */

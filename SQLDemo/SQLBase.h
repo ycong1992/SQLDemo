@@ -4,19 +4,50 @@
  数据库可以分为2大种类：关系型数据库(主流如SQLite)、对象型数据库
  SQLite是一款轻型的嵌入式数据库：1）它占用资源非常的低，在嵌入式设备中，可能只需要几百K的内存就够了；2）它的处理速度比Mysql、PostgreSQL这两款著名的数据库都还快
  数据库是如何存储数据的？数据库的存储结构和excel很像，以表(table)为单位
+ 步骤：1）新建数据库文件；2）新建一张表；3）添加多个字段(column/列，属性)；4）添加多行记录(row/行，每行存放多个字段对应的值)
  
- SQL(structured query language)：结构化查询语言，是一种对关系型数据库中的数据进行定义和操作(增删改查，CRUD)的语言
+ 【SQL(structured query language)】结构化查询语言，是一种对关系型数据库中的数据进行定义和操作(增删改查，CRUD)的语言
  备注：增加(Create)、检索(Retrieve)、更新(Update)、删除(Delete)
  SQL语句的种类：
- 1）数据定义语句(DDL:Data Definition Language)
+ 1）数据定义语句(DDL，Data Definition Language)
  包括create和drop等操作(在数据库中创建新表create table或删除表drop table)
- 2）数据操作语句(DML:Data Manipulation Language)
+ 2）数据操作语句(DML，Data Manipulation Language)
  包括insert、update、delete等操作(添加、修改、删除表中的数据)
- 3）数据查询语句(DQL:Data Query Language)
+ 3）数据查询语句(DQL，Data Query Language)
  可以用于查询获得表中的数据(关键字select是DQL用得最多的操作，其他DQL常用的关键字有where、order by、group by、having)
  统计(个数/平均值/求和/最大、小值)、排序(升、降序)、limit分页(控制查询条数)
  https://www.xp.cn/e/sql/sql_intro.html
  
+ 【SQL语法】
+ 创表：create table if not exists 表名 (字段名1 字段类型1, 字段名2 字段类型2, ...);
+ 删表：drop table if exists 表名;
+ 插入数据：insert into 表名 (字段1, 字段2, ...) values (字段1的值, 字段2的值, ...);
+ 更新数据：update 表名 set 字段1 = 字段1的值, 字段2 = 字段2的值, ...;
+ 删除数据：delete from 表名;
+ 备注：1）字段类型：integer整型值、real浮点值、text文本字符串、blob二进制数据；2）数据库中的字符串内容应该用单引号括住
+ 条件语句：如果只想更新或者删除某些固定的记录，那就必须在DML语句后加上一些条件，如下
+ where字段=某个值; 或 where字段is某个值;
+ where字段!=某个值; 或 where字段is not某个值;
+ where字段>某个值;
+ where字段1=某个值and字段2>某个值;  // and相当于C语言中的&&
+ where字段1=某个值or字段2=某个值;  // or相当于C语言中的||
+ 查询部分字段：select 字段1, 字段2, ... from 表名;
+ 查询所有字段：select * from 表名;
+ 起别名：字段和表都可以起别名，如下
+ select 字段1 别名, 字段2 别名, ...from 表名 别名;
+ select 字段1 别名, 字段2 as 别名, ...from 表名 as 别名;
+ select 别名.字段1, 别名.字段2, ... from 表名 别名;
+ 计算记录的数量：select count (字段) from 表名 ; 或 select count (*) from 表名;
+ 排序，查询出来的结果可以用order by进行排序：select * from t_student order by 字段;
+ 默认是按照升序排序(由小到大)，也可以变为降序(由大到小)，如：
+ select * from t_student order by age desc ; //降序
+ select * from t_student order by age asc ; // 升序(默认)
+ 也可以用多个字段进行排序，如：
+ select * from t_student order by age asc, height desc;(先按照年龄升序排序，年龄相等就按照身高降序排序)
+ limit：使用limit可以精确地控制查询结果的数量，比如每次只查询10条数据，select * from 表名 limit 数值1, 数值2;
+ 
+ 简单约束，建表时可以给特定的字段设置一些约束条件，以保证数据的规范性，常⻅的约束有：
+ 1）not null：规定字段的值不能为null；2）unique：规定字段的值必须唯一；3）default：指定字段的默认值
  主键(Primary Key，简称PK)用来唯一地标识某一条记录(可以是一个字段或多个字段)
  主键的声明：在创表的时候用primary key声明一个主键(如果想要让主键(integer类型)自动增⻓，应该增加autoincrement)
  主键的设计原则：1）主键应当是对用户没有意义的；2）永远也不要更新主键；3）主键不应包含动态变化的数据；4）主键应当由计算机自动生成
@@ -60,7 +91,7 @@
  一般流程：1）创建/打开数据库；2）创建表；3）增删改查；4）删除表；5）关闭数据库
  
  事务(Transaction)：是并发控制的单位，是用户定义的一个操作序列。这些操作要么都做，要么都不做，是一个不可分割的工作单位。通过事务，可以将逻辑相关的一组操作绑定在一起，保持数据的完整性
- 事务与非事务，简单的举例来说就是，事务就是把所有的东西打包在一起，一次性处理它。而非事务就是一条一条的来执行并且处理。
+ 事务与非事务：简单的举例来说就是，事务就是把所有的东西打包在一起，一次性处理它，而非事务就是一条一条的来执行并且处理
 
  更新SQL的函数(创表、更新、插入和删除)：
  1）sqlite3_exec实际上是将编译，执行进行了封装，等价于sqlite3_prepare_v2()、sqlite3_step()和sqlite3_finalize()
