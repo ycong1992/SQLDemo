@@ -19,6 +19,7 @@
 		06C4983E25539F3E00971D60 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4983D25539F3E00971D60 /* Person.m */; };
 		096483A55E6552AEAFD24771 /* Pods_SQLDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030F1AB9B08892C31296E38C /* Pods_SQLDemo.framework */; };
 		2780D16A0C2ED759F147B4F2 /* Pods_SQLDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */; };
+		7E9756D825EBC223008D3903 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E9756D625EBC223008D3903 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		78BB89970F07982AE1687CFF /* Pods-SQLDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.release.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7E9756D025EBBE54008D3903 /* SQLBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLBase.h; sourceTree = "<group>"; };
 		7E9756D125EBBE7C008D3903 /* FMDBBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBBase.h; sourceTree = "<group>"; };
+		7E9756D525EBC1D6008D3903 /* CoreDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataBase.h; sourceTree = "<group>"; };
+		7E9756D725EBC223008D3903 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemoUITests/Pods-SQLDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE89924BCE5594EA74A2BE1A /* Pods-SQLDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,10 +113,12 @@
 				06C49816255395C700971D60 /* SceneDelegate.m */,
 				7E9756D025EBBE54008D3903 /* SQLBase.h */,
 				7E9756D125EBBE7C008D3903 /* FMDBBase.h */,
+				7E9756D525EBC1D6008D3903 /* CoreDataBase.h */,
 				06C49818255395C700971D60 /* ViewController.h */,
 				06C49819255395C700971D60 /* ViewController.m */,
 				06C4983C25539F3E00971D60 /* Person.h */,
 				06C4983D25539F3E00971D60 /* Person.m */,
+				7E9756D625EBC223008D3903 /* Model.xcdatamodeld */,
 				06C4981B255395C700971D60 /* Main.storyboard */,
 				06C4981E255395CC00971D60 /* Assets.xcassets */,
 				06C49820255395CC00971D60 /* LaunchScreen.storyboard */,
@@ -325,6 +330,7 @@
 				06C4983E25539F3E00971D60 /* Person.m in Sources */,
 				06C49825255395CC00971D60 /* main.m in Sources */,
 				06C49817255395C700971D60 /* SceneDelegate.m in Sources */,
+				7E9756D825EBC223008D3903 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +585,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7E9756D625EBC223008D3903 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7E9756D725EBC223008D3903 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7E9756D725EBC223008D3903 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 06C49807255395C700971D60 /* Project object */;
 }
