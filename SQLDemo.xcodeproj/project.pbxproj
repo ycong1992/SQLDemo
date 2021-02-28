@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,6 +53,8 @@
 		06C4983D25539F3E00971D60 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		67A7F88FC7C6C9D5A8AA10BA /* Pods-SQLDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SQLDemoUITests/Pods-SQLDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78BB89970F07982AE1687CFF /* Pods-SQLDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.release.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7E9756D025EBBE54008D3903 /* SQLBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLBase.h; sourceTree = "<group>"; };
+		7E9756D125EBBE7C008D3903 /* FMDBBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBBase.h; sourceTree = "<group>"; };
 		A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemoUITests/Pods-SQLDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9A62437248BEC411360E61C /* Pods_SQLDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SQLDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE89924BCE5594EA74A2BE1A /* Pods-SQLDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLDemo.debug.xcconfig"; path = "Target Support Files/Pods-SQLDemo/Pods-SQLDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,8 @@
 				06C49813255395C700971D60 /* AppDelegate.m */,
 				06C49815255395C700971D60 /* SceneDelegate.h */,
 				06C49816255395C700971D60 /* SceneDelegate.m */,
+				7E9756D025EBBE54008D3903 /* SQLBase.h */,
+				7E9756D125EBBE7C008D3903 /* FMDBBase.h */,
 				06C49818255395C700971D60 /* ViewController.h */,
 				06C49819255395C700971D60 /* ViewController.m */,
 				06C4983C25539F3E00971D60 /* Person.h */,
@@ -146,7 +150,6 @@
 				A38C4BA6FA218EE1D3BD752D /* Pods-SQLDemoUITests.debug.xcconfig */,
 				67A7F88FC7C6C9D5A8AA10BA /* Pods-SQLDemoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
