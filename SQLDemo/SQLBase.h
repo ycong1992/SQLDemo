@@ -10,7 +10,7 @@
  备注：增加(Create)、检索(Retrieve)、更新(Update)、删除(Delete)
  SQL语句的种类：
  1）数据定义语句(DDL，Data Definition Language)
- 包括create和drop等操作(在数据库中创建新表create table或删除表drop table)
+ 包括create、drop、alter等操作(在数据库中创建新表create table、删除表drop table、修改表alter table)
  2）数据操作语句(DML，Data Manipulation Language)
  包括insert、update、delete等操作(添加、修改、删除表中的数据)
  3）数据查询语句(DQL，Data Query Language)
@@ -94,10 +94,10 @@
  【SQLite3】在iOS中使用SQLite3，首先要添加库文件libsqlite3.dylib和导入主头文件
  一般流程：1）创建/打开数据库；2）创建表；3）增删改查；4）删除表；5）关闭数据库
  sqlite3_open：根据文件路径打开数据库，如果不存在，则会创建一个新的数据库
- sqlite3_exec：执行任何SQL语句，比如创表、更新、插入和删除操作。但是一般不用它执行查询语句，因为它不会返回查询到的数据(查询一般使用stmt)
+ sqlite3_exec：执行任何SQL语句，比如创表、更新、插入和删除操作。但一般不用它执行查询语句，因为它是每查到一条记录就会调用一次回调函数(查询一般使用stmt)
  
  更新SQL的函数(创表、更新、插入和删除)：
- 1）sqlite3_exec实际上是将编译，执行进行了封装，等价于sqlite3_prepare_v2()、sqlite3_step()和sqlite3_finalize()
+ 1）sqlite3_exec实际上是将编译、执行进行了封装，等价于sqlite3_prepare_v2()、sqlite3_step()和sqlite3_finalize()
  2）sqlite3_stmt机制操作：
  <1>指令准备：sqlite3_prepare_v2会对sql语句(模板)进行解析和编译，生成一个准备语句对象
  <2>变量绑定：sqlite3_bind_xxx可以将变量绑定到准备语句对象中
