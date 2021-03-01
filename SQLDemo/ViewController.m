@@ -138,6 +138,12 @@
             [self.sqlArray addObject:person];
         }
     }
+    
+    if ([database close]) {
+        NSLog(@"database close success");
+    } else {
+        NSLog(@"database close fail");
+    }
 }
 
 - (void)openFMDBMultithreading {
@@ -183,7 +189,8 @@
         *rollback = YES; // 设置为YES表示放弃所有更改
     }];
     NSLog(@"");
-
+    
+    [queue close];
 }
 
 - (NSMutableArray *)sqlArray {
