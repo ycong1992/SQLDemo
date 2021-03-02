@@ -25,6 +25,9 @@
     /** FMDB操作 */
 //    [self openFMDB];
 //    [self openFMDBMultithreading]; // 多线程FMDatabaseQueue
+    
+    /** CoreData操作 */
+//    [self initContext];
 }
 
 #pragma mark - sqlite3
@@ -200,7 +203,7 @@
     return _sqlArray;
 }
 
-#pragma mark - Core Data
+#pragma mark - CoreData
 - (void)initContext {
     /** 1）搭建上下文环境 */
     // 从应用程序包中加载模型文件
@@ -217,13 +220,13 @@
         [NSException raise:@"添加数据库错误" format:@"%@", [error localizedDescription]];
     }
     // 初始化上下文，设置persistentStoreCoordinator属性
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     context.persistentStoreCoordinator = psc;
     // 用完之后，记得要[context release];
 
     /** 2）添加数据到数据库 */
     // 传入上下文，创建一个Person实体对象
-    NSManagedObject *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
+    NSManagedObject *person = [NSEntityDescription insertNewObjectForEntityForName:@"Person1" inManagedObjectContext:context];
     // 设置Person的简单属性
     [person setValue:@"MJ" forKey:@"name"];
     [person setValue:[NSNumber numberWithInt:27] forKey:@"age"];
@@ -244,7 +247,7 @@
     // 初始化一个查询请求
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     // 设置要查询的实体
-    request.entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:context];
+    request.entity = [NSEntityDescription entityForName:@"Person1" inManagedObjectContext:context];
     // 设置排序（按照age降序）
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
     request.sortDescriptors = [NSArray arrayWithObject:sort];
