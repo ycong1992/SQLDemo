@@ -215,7 +215,7 @@
     NSURL *url = [NSURL fileURLWithPath:[docs stringByAppendingPathComponent:@"person.data"]];
     // 添加持久化存储库，这里使用SQLite作为存储库
     NSError *error = nil;
-    NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error];
+    NSPersistentStore *store = [psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error]; // 如果该路径下的数据库已存在则不会重复创建
     if (store == nil) { // 直接抛异常
         [NSException raise:@"添加数据库错误" format:@"%@", [error localizedDescription]];
     }
@@ -274,7 +274,7 @@
     [context save:&error4];
     if (error4) {
         [NSException raise:@"删除错误" format:@"%@", [error4 localizedDescription]];
-    }
+    }    
 }
 
 @end
